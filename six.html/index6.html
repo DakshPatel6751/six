@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Headline</title>
+  
+    <style>body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    
+    .banner {
+        background-color: #0073e6;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .headline {
+        font-size: 2em;
+        color: white;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 1s ease-in-out;
+    }
+    
+    .headline.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1 class="headline">Welcome to Our Sale!</h1>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <script src="script.js"></script>
+    <script>$(document).ready(function() {
+        
+        setTimeout(function() {
+            $('.headline').addClass('animate');
+        }, 500); 
+    });
+    </script>
+</body>
+</html>
